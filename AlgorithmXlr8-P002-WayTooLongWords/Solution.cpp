@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+string abbword(const string& word)
+{
+    if((int)word.size()<=10)
+    return  word;
+    else
+    {
+         return word[0] + to_string((int)word.size() - 2) + word[word.size() - 1];
+    }
+}
 int main() {
     int n;
     cin >> n;
@@ -9,17 +18,7 @@ int main() {
     {
         string word;
         getline(cin, word);
-        int len = word.size();
-
-        if(len>10)
-        {
-            int cnt = len-2;
-            cout<< word[0]<< cnt<<word[len-1]<<endl;
-        }
-        else
-        {
-            cout<<word<<endl;
-        }
+       cout<< abbword(word)<<endl;
         
     }
     return 0;
